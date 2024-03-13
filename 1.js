@@ -1,14 +1,22 @@
-$(function () {
-    $('ul#menu li:even').addClass('tlo1');
-    $('ul#menu li:odd').addClass('tlo2');
-    
-    $('ul#menu li').hover(
-        function() {
-            $(this).addClass('wybor');
-        },
+function sprawdz() {
+    var a = document.getElementById("a").checked;
+    var b = document.getElementById("b").checked;
+    var c = document.getElementById("c").checked;
 
-        function() {
-            $(this).removeClass('wybor');
+    console.log(a, b, c);
+
+    if(a == false && b == false && c == false) {
+        document.getElementById("wynik").innerHTML = "Zaznacz odpowiedź";
+        wynik.style.color = "orange";
+    }
+    else {
+        if(a == true) {
+            document.getElementById("wynik").innerHTML = "TAK";
+            wynik.style.color = "green";
         }
-    );
-});
+        else {
+            document.getElementById("wynik").innerHTML = "NIE";
+            wynik.style.color = "red";
+        }
+    }
+}
